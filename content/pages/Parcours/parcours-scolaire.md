@@ -2,7 +2,7 @@ Title: Parcours scolaire
 
 # Présentation de mon parcours scolaire
 
-Après un bac **STI2D** spécialité **SIN** (**S**ystèmes d'**I**nformations & **N**umérique) j'avais la volonté de poursuivre dans le domaine de l'informatique. Après m'être renseigné, j'avais recensé les poursuite d'études suivantes dans le domaine de l'informatique :
+Après un bac **AGORA** spécialité **GA** (**G**estio **A**dministration) j'avais la volonté de poursuivre dans le domaine de l'informatique. Après m'être renseigné, j'avais recensé les poursuite d'études suivantes dans le domaine de l'informatique :
 
 
 
