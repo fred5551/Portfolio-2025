@@ -91,6 +91,7 @@ Couleur des éléments de navigations :
 
 .navbar {
     font-size: 0.8em;
+    background-color: #14889c;
 }
 
 .nav-link-icon {
@@ -131,23 +132,271 @@ Couleur des éléments de navigations :
 }
 
 .card {
-    transition:transform 0.8s
+    border-radius: 14px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
-    transition: 0.8s;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 200, 255, 0.25);
 }
 
 .card-body {
     box-shadow: 6px 8px 12px rgba(0, 0, 0, 1);
     border-radius: 12px;
+    background-color: rgb(115, 226, 230);
 }
 
 .btn {
-    box-shadow: 4px 6px 6px rgba(0, 0, 0, 1);
+    position: relative;
+    background: linear-gradient(135deg, #99f7eb, #0a6879);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 200, 255, 0.35);
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+}
+/* === TITRES === */
 #h2, h3, p, a, li, h1 {
-    color: white;
+    color: rgb(60, 208, 228);
+    text-shadow: 0px 0px 8px rgba(0, 204, 211, 0.4);
+}
+
+/*
+==================================================
+   STYLE PERSONNALISÉ POUR LA SECTION "PARCOURS"
+==================================================
+*/
+
+.parcours-section h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 200, 255, 0.4);
+}
+
+.parcours-list {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.parcours-link {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 200, 255, 0.2);
+}
+
+.parcours-link:hover {
+  background: rgba(0, 200, 255, 0.2);
+  color: #00c8ff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 200, 255, 0.4);
+}
+
+/*
+==================================================
+   STYLE PERSONNALISÉ POUR LA SECTION "REALISATIONS"
+==================================================
+*/
+
+.realisations-section h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 200, 255, 0.4);
+}
+
+.realisations-list {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.realisations-link {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 200, 255, 0.2);
+}
+
+.realisations-link:hover {
+  background: rgba(0, 200, 255, 0.2);
+  color: #00c8ff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 200, 255, 0.4);
+}
+
+/*
+==================================================
+   STYLE DE LA FRISE CHRONOLOGIQUE
+==================================================
+*/
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 200, 255, 0.5);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-marker {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 200, 255, 0.8);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 200, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 200, 255, 0.5);
+}
+
+/* Alignement gauche/droite alterné */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: auto;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+  text-align: left;
+}
+
+/* ================================
+   STAGE SECTION
+================================ */
+.stage-section h1 {
+  font-size: 2.2rem;
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.6);
+}
+
+.stage-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0,200,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.stage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,200,255,0.4);
+}
+
+.stage-card h2 {
+  color: #00eaff;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Timeline interne */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(0,200,255,0.4);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: rgba(0,200,255,0.8);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(0,200,255,0.6);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,255,0.2);
+}
+
+.pdf-container embed {
+  border-radius: 10px;
+  border: 2px solid rgba(0,200,255,0.3);
 }
