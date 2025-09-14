@@ -17,7 +17,7 @@ from datetime import datetime
 
 SITENAME = 'Portfolio BTS SIO SLAM'
 SITESUBTITLE = "Mon parcours de formation"
-AUTHOR = 'John DOE'
+AUTHOR = 'Frederic Bitsindou'
 SITEURL = "" # Est surchargé par l'url du serveur dans le fichier publishconf.py
 TIMEZONE = 'Europe/Rome'
 DEFAULT_LANG = 'fr'
@@ -36,7 +36,7 @@ PAGE_PATHS = ['pages']          # Sous-dossier de PATH qui contient les pages st
 
 
 # Pour les fichiers statiques :
-STATIC_PATHS = []
+STATIC_PATHS = ['theme']
 
 # Dossier de sortie pour la publication :
 OUTPUT_PATH = 'docs'           # Attention, pour la publication sur GitHub Pages le dossier doit être "/docs"

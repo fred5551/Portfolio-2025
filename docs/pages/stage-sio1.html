@@ -261,7 +261,6 @@
                   </li>
                 </ul>
               </li>
-            
             </ul>
           </div>
         </div>
@@ -269,80 +268,294 @@
     </div>
     <main class="container mt-5 p-0 min-vh-100">
       <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
-<main class="container my-5">
-  <section class="stage-section">
-    
-    <!-- En-tête -->
-    <h1 class="text-center mb-4">Stage SIO1</h1>
-    
-    <!-- Carte descriptive -->
-    <div class="stage-card">
-      <h2>📄 Fiche descriptive</h2>
-      <ul>
-        <li><strong>Date début :</strong> 19/05/2025</li>
-        <li><strong>Date fin :</strong> 28/06/2025</li>
-        <li><strong>Entreprise :</strong> École Polytechnique</li>
-      </ul>
-    </div>
+      <main class="container my-5">
+        <section class="stage-section">
+          <!-- En-tête -->
+          <h1 class="stage-title text-center mb-4">Stage SIO1</h1>
 
-    <!-- Présentation entreprise -->
-    <div class="stage-card">
-      <h2>🏛️ Présentation de l'entreprise</h2>
-      <p>
-        Créée en <strong>1794</strong>, l’École Polytechnique, surnommée <em>l’X</em>, 
-        est située à Palaiseau sur le plateau de Saclay. 
-        Sous tutelle du <strong>ministère des Armées</strong>, 
-        elle forme des ingénieurs et chercheurs de haut niveau.
-      </p>
-      <p>
-        L’école se distingue par son <strong>excellence académique</strong>, 
-        son <strong>rayonnement international</strong> et son rôle central 
-        dans la <strong>recherche et l’innovation</strong>.
-      </p>
-    </div>
-
-    <!-- Missions & tâches -->
-    <div class="stage-card">
-      <h2>🛠️ Missions & Tâches Réalisées</h2>
-      <div class="timeline">
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">🔧</div>
-          <div class="timeline-content">
-            <h3>Installation et configuration</h3>
-            <p>Déploiement de machines virtuelles et configuration des environnements réseau.</p>
+          <!-- Fiche descriptive -->
+          <div class="stage-card meta-card">
+            <h2>📄 Fiche descriptive</h2>
+            <ul class="plain-list">
+              <li><strong>Dates du stage :</strong> 19/05/2025 — 28/06/2025</li>
+              <li>
+                <strong>Entreprise :</strong> École Polytechnique (Palaiseau)
+              </li>
+            </ul>
           </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">💻</div>
-          <div class="timeline-content">
-            <h3>Développement</h3>
-            <p>Création de scripts automatisés et petites applications internes pour simplifier la gestion.</p>
+
+          <!-- Présentation entreprise -->
+          <div class="stage-card">
+            <h2>🏛 Présentation de l'entreprise</h2>
+            <p>
+              Créée en 1794, l’École Polytechnique (l’X) est située sur le
+              plateau de Saclay. L’école forme des ingénieurs et des chercheurs,
+              et possède un fort rayonnement en recherche et innovation.
+            </p>
           </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker">🔐</div>
-          <div class="timeline-content">
-            <h3>Sécurité informatique</h3>
-            <p>Participation à l’audit réseau et mise en place de mesures correctives basiques.</p>
+
+          <!-- Description du projet (reprend le contenu du rapport) -->
+          <div class="stage-card project-card">
+            <h2>🔎 Projet — Analyse de données (bibliothèques Python)</h2>
+            <p>
+              Dans le cadre de mon stage, j’ai mené un projet d’analyse de
+              données portant sur la liste fournie par l’établissement, ciblant
+              les élèves de BTS SIO. L’objectif principal était d’étudier si la
+              distance domicile-lycée pouvait influencer la moyenne générale des
+              élèves.
+            </p>
+
+            <h3>Objectifs</h3>
+            <ul class="plain-list">
+              <li>
+                Étudier la relation entre distance domicile-lycée et moyenne
+                générale.
+              </li>
+              <li>
+                Proposer une loi simple modélisant la relation, puis prédire et
+                évaluer.
+              </li>
+              <li>
+                Rédiger un compte-rendu synthétique et reproductible (notebook /
+                script).
+              </li>
+            </ul>
           </div>
-        </div>
 
-      </div>
-    </div>
+          <!-- Missions & tâches (adaptées du rapport) -->
+          <div class="stage-card tasks-card">
+            <h2>🛠 Missions & tâches réalisées</h2>
 
-    <!-- Rapport PDF intégré -->
-    <div class="stage-card pdf-container">
-      <h2>📑 Rapport de Stage</h2>
-      <embed src="RapportSTAGE-BTS.pdf" type="application/pdf" width="100%" height="600px">
-    </div>
+            <!-- Stepper / timeline verticale simplifiée -->
+            <ol
+              class="tasks-stepper"
+              aria-label="Étapes du projet d'analyse de données"
+            >
+              <li>
+                <strong>Lecture des données</strong>
+                <p>
+                  Import des fichiers fournis, nettoyage initial (valeurs
+                  manquantes, formats, typages). Outils : <em>pandas</em>.
+                </p>
+              </li>
 
-  </section>
-</main>
+              <li>
+                <strong>Analyse exploratoire des données (EDA)</strong>
+                <p>
+                  Statistiques descriptives, visualisations (histogrammes,
+                  boxplots, scatterplots) pour comprendre distributions et
+                  outliers. Outils : <em>pandas, matplotlib, seaborn</em>.
+                </p>
+              </li>
 
+              <li>
+                <strong>Détermination d'une loi simple</strong>
+                <p>
+                  Test de corrélation (ex. Pearson/Spearman) et proposition d'un
+                  modèle simple (par ex. régression linéaire simple) liant
+                  distance et moyenne.
+                </p>
+              </li>
 
+              <li>
+                <strong>Prédiction à partir de cette loi</strong>
+                <p>
+                  Entrainer un modèle basique (régression) puis prédire la
+                  moyenne à partir de la distance. Outils possibles :
+                  <em>scikit-learn</em>.
+                </p>
+              </li>
+
+              <li>
+                <strong>Analyse des résultats</strong>
+                <p>
+                  Évaluation des performances (RMSE, R²) et interprétation :
+                  signification pratique des coefficients, limites du modèle
+                  (variables confondantes, dispersion).
+                </p>
+              </li>
+
+              <li>
+                <strong>Rédaction du compte rendu</strong>
+                <p>
+                  Compilation des étapes, code reproductible, visualisations
+                  clés et conclusions — export en PDF (voir le rapport complet
+                  ci-dessous).
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Méthodologie & outils (résumé technique) -->
+          <div class="stage-card tools-card">
+            <h2>🧰 Méthodologie & outils</h2>
+            <p>
+              Approche reproductible : notebooks Python (Jupyter), scripts
+              d’import/ nettoyage, visualisations et notebook d’analyse.
+              Librairies utilisées :
+              <em>pandas, numpy, matplotlib, seaborn, scikit-learn</em> (à
+              adapter selon le rapport).
+            </p>
+          </div>
+          <!-- Organigramme DSIT -->
+          <main class="container my-5">
+            <section class="org-wrapper">
+              <h1 class="org-title text-center">
+                Organisation du Département des Systèmes d'Informations et
+                Télécommunications (DSIT)
+              </h1>
+              <p class="org-subtitle text-center">
+                Organisation effective au 01/09 — 19 agents répartis sur 3 pôles
+              </p>
+
+              <!-- Responsable DSIT -->
+              <div class="org-row org-top">
+                <article class="org-node leader">
+                  <div class="node-head">
+                    <div class="node-role">Responsable DSIT</div>
+                    <div class="node-name">Malika Grim</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Adjoint & Mission -->
+              <div class="org-row org-middle">
+                <article class="org-node small">
+                  <div class="node-head">
+                    <div class="node-role">Adjoint DSIT</div>
+                    <div class="node-name">Florent Hocde</div>
+                  </div>
+                </article>
+                <article class="org-node small">
+                  <div class="node-head">
+                    <div class="node-role">Chargé de mission</div>
+                    <div class="node-name">Tarik Mouhtadi</div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- 3 pôles -->
+              <div class="org-row org-poles">
+                <!-- Pôle Application -->
+                <article class="org-node pole highlighted">
+                  <div class="node-head">
+                    <div class="node-role">Pôle Application</div>
+                    <div class="node-name">
+                      Florent Hocde<br /><small
+                        >Adjoint au responsable DSIT</small
+                      >
+                    </div>
+                  </div>
+                  <p class="node-mission">
+                    <strong>Missions :</strong> Développement, maintenance,
+                    gestion de projets applicatifs.
+                  </p>
+                  <ul class="node-list">
+                    <li>Catherine Simon — Chef de projet SIRH & SI Finance</li>
+                    <li>
+                      Christophe Lagarde — Chef de projet SI Scolarité &
+                      Bibliothèque
+                    </li>
+                    <li>Charly Awad — Chef de projet Web & Collaboratifs</li>
+                    <li>Maylis Gaillard — Apprentie Développeuse Web</li>
+                  </ul>
+                </article>
+
+                <!-- Pôle Services Transverses -->
+                <article class="org-node pole">
+                  <div class="node-head">
+                    <div class="node-role">
+                      Pôle Services Transverses,<br />Infra & Réseaux
+                    </div>
+                    <div class="node-name">Jean-Luc Merat</div>
+                  </div>
+                  <p class="node-mission">
+                    <strong>Missions :</strong> Coordination des services
+                    transverses, infrastructures et supervision réseau.
+                  </p>
+                  <ul class="node-list">
+                    <li>
+                      Alexis Guyot — Adjoint au responsable, Ingénieur MLOps
+                    </li>
+                    <li>Wasfé Achafar — Ingénieur Système & Réseaux</li>
+                    <li>Nesrine Hamed Khodja — Ingénieure Système & Réseaux</li>
+                    <li>
+                      Clément Verger — Apprenti Ingénieur Système & Réseau
+                    </li>
+                  </ul>
+                </article>
+
+                <!-- Pôle Support Utilisateurs -->
+                <article class="org-node pole">
+                  <div class="node-head">
+                    <div class="node-role">
+                      Pôle Support Utilisateurs & Matériel
+                    </div>
+                    <div class="node-name">Mustapha Dahmani</div>
+                  </div>
+                  <p class="node-mission">
+                    <strong>Missions :</strong> Support utilisateur, matériel,
+                    audiovisuel et interventions terrain.
+                  </p>
+                  <ul class="node-list">
+                    <li>Emmanuel Cavadini — Technicien Support</li>
+                    <li>Wilfrid Urso — Ingénieur DevOps</li>
+                    <li>Florence Cordon — Technicienne Support</li>
+                    <li>Laurent Salmon — Technicien Support</li>
+                    <li>Evan Jean-Marie — Technicien Support</li>
+                    <li>Kylian Codjo — Apprenti Technicien Support</li>
+                  </ul>
+                </article>
+              </div>
+
+              <!-- Légende -->
+              <div class="org-row org-legend">
+                <small class="muted">
+                  Pôle Application (surbrillance) : pôle avec lequel j'ai
+                  collaboré.
+                </small>
+              </div>
+            </section>
+          </main>
+          <!-- Lien PDF -->
+          <div class="org-row org-pdf">
+            <a href="StructureEntreprise.pdf" target="_blank" class="pdf-link">
+              📄 Télécharger l’organisation complète en PDF
+            </a>
+          </div>
+
+          <!-- Rapport PDF intégré (séparé des missions) -->
+          <div class="stage-card pdf-card">
+            <h2>📑 Rapport — Analyse complète (PDF)</h2>
+            <p class="muted">
+              Le rapport détaillé contient le code, les figures et le compte
+              rendu complet.
+            </p>
+
+            <!-- Boutons actions -->
+            <div class="pdf-actions mb-3">
+              <a
+                class="btn stage-btn"
+                href="RapportSTAGE-BTS.pdf"
+                target="_blank"
+                rel="noopener"
+                >Voir le rapport (PDF)</a
+              >
+            </div>
+
+            <!-- Embed du PDF (visuel, non confondu avec les missions) -->
+            <div class="embed-responsive">
+              <embed
+                src="RapportSTAGE-BTS.pdf"
+                type="application/pdf"
+                width="100%"
+                height="600px"
+                aria-label="Rapport de stage PDF"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
     </main>
 
     <!-- INCLUSION DU FOOTER : -->

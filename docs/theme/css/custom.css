@@ -58,11 +58,10 @@ Définition du fond :
 */
 body {
     background-image: url('../backgrounds/body2.png');
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%; /*contain*/ 
-    height: 150px;
-    background-attachment: fixed;
+    background-size:cover;
+    background-attachment:fixed;
+    position: relative;
   }
 
 
@@ -79,9 +78,10 @@ Définition du fond du header :
 
 .background-header {
     background-image:url('../backgrounds/body2.png');
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; /*contain*/ 
+    background-size:cover;
+    background-attachment:fixed;
+    position: relative; 
   }
 
 /*
@@ -399,4 +399,232 @@ Couleur des éléments de navigations :
 .pdf-container embed {
   border-radius: 10px;
   border: 2px solid rgba(0,200,255,0.3);
+}
+
+/* ======================================================
+   dsit-org.css
+   Styles pour l'organigramme DSIT — séparé et réutilisable
+   ====================================================== */
+
+/* Respect des variables globales si elles existent, sinon valeurs de secours */
+:root{
+  --org-accent:  var(--accent, #00c8ff);
+  --org-accent-weak: rgba(0,200,255,0.16);
+  --org-card-bg:  rgba(255,255,255,0.04);
+  --org-text:     var(--nav-link, #ffffff);
+  --org-muted:    rgba(255,255,255,0.75);
+}
+
+/* Conteneur */
+.org-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Titres */
+.org-title {
+  font-size: 1.9rem;
+  color: var(--org-accent);
+  text-shadow: 0 0 10px rgba(0,200,255,0.35);
+  margin-bottom: 6px;
+}
+
+.org-subtitle {
+  color: var(--org-muted);
+  margin-bottom: 24px;
+}
+
+/* Chart grid */
+.org-chart {
+  display: grid;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Rows */
+.org-row.org-top { display: flex; justify-content: center; }
+.org-row.org-poles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+}
+.org-row.org-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.org-row.org-legend { text-align:center; margin-top: 6px; }
+
+/* Node general */
+.org-node {
+  background: var(--org-card-bg);
+  color: var(--org-text);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  min-height: 92px;
+}
+
+/* keyboard focus */
+.org-node:focus { outline: none; transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,200,255,0.22); }
+
+/* Node small variant */
+.org-node.small {
+  padding: 10px;
+  min-height: 70px;
+  font-size: 0.95rem;
+}
+
+/* Pole / leader / highlights */
+.org-node.leader {
+  width: 360px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.02));
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.55);
+  border: 1px solid rgba(0,200,255,0.12);
+}
+.org-node.pole { text-align: center; padding: 16px; min-height: 120px; }
+.org-node.pole .node-head .node-role { font-weight: 700; }
+
+/* Highlighted pole (Pôle Application) */
+.org-node.highlighted {
+  background: linear-gradient(180deg, rgba(0,200,255,0.12), rgba(255,255,255,0.02));
+  border: 1px solid rgba(0,200,255,0.35);
+  box-shadow: 0 12px 30px rgba(0,200,255,0.16);
+  position: relative;
+}
+.org-node.highlighted::after {
+  content: "Pôle collaboré";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--org-accent);
+  color: #002;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,200,255,0.12);
+}
+
+/* Node head */
+.node-head { display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center; }
+.node-role { color: var(--org-accent); font-weight:700; font-size:0.95rem; }
+.node-name { color: var(--org-text); font-size:1.05rem; line-height:1.15; }
+
+/* details summary styling (no JS required) */
+.node-details summary {
+  list-style: none;
+  cursor: pointer;
+  margin-top: 10px;
+  color: var(--org-accent);
+  font-weight:600;
+}
+.node-details summary::-webkit-details-marker { display: none; }
+
+/* details open state */
+.node-details[open] { margin-top: 8px; }
+.node-details p, .node-details li { color: var(--org-text); font-size:0.95rem; }
+
+/* Steps & lists inside details */
+.node-details ul { margin:8px 0 0 1rem; padding:0; }
+
+/* Members columns */
+.members-column { display:flex; flex-direction:column; gap:12px; }
+
+/* connectors (visual) - draw a soft network below the leader toward the poles */
+.org-row.org-top::after {
+  content: "";
+  display:block;
+  height: 24px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 40%, rgba(0,200,255,0.06) 50%, transparent 60%);
+  margin-top: 10px;
+}
+
+/* subtle lines between top and poles using pseudo-elements on poles */
+.org-row.org-poles > .org-node::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(0,200,255,0.4), rgba(0,200,255,0.08));
+  transform: translateX(-50%);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Responsive behaviour */
+@media (max-width: 900px) {
+  .org-row.org-poles { grid-template-columns: 1fr; }
+  .org-row.org-members { grid-template-columns: 1fr; }
+  .org-node.leader { width: 100%; }
+  .org-node.pole { min-height: auto; }
+}
+
+/* print friendly */
+@media print {
+  .org-wrapper { color: #000; }
+  .org-node { box-shadow: none; border: 1px solid #ccc; background: #fff; color: #000; }
+  .node-role { color: #111; }
+  .org-title { color: #111; text-shadow:none; }
+}
+/* Listes d’agents dans chaque pôle */
+/* Mise en avant des missions */
+.node-mission {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--org-muted);
+  text-align: left;
+}
+
+/* Espacement entre rôle et liste */
+.node-list {
+  margin-top: 8px;
+  padding-left: 18px;
+  text-align: left;
+}
+
+/* Pour une meilleure lisibilité */
+.node-list li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+/* Lien PDF */
+.org-row.org-pdf {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  background: rgba(0,200,255,0.08);
+  border: 1px solid rgba(0,200,255,0.3);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 22px rgba(0,200,255,0.2), inset 0 0 12px rgba(0,200,255,0.15);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(0,200,255,0.5);
+}
+
+.pdf-link:hover {
+  background: rgba(0,200,255,0.2);
+  box-shadow: 0 8px 26px rgba(0,200,255,0.35), inset 0 0 16px rgba(0,200,255,0.2);
+  transform: translateY(-2px);
+}
+
+.pdf-link:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 14px rgba(0,200,255,0.25), inset 0 0 10px rgba(0,200,255,0.18);
 }
